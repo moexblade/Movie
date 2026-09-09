@@ -23,15 +23,23 @@ app.get("/", (req, res) => {
 app.get("/search", async (req, res) => {
   try {
     const word = req.query.word;
+    const currentPage = Number(req.query.page) || 1;
     const response = await axios.get(`${OMDB_URL}/`, {
       params: {
         apiKey: OMDB_KEY,
         s: word,
+        page: currentPage,
       },
     });
     const movies = response.data;
-    console.log(movies.Search[0].Title);
-    res.render("index", { movies, word });
+    const totalPages = Math.ceil(Number(movies.totalResults || 0) / 10);
+
+    res.render("index", {
+      movies,
+      searchWord: word,
+      currentPage,
+      totalPages,
+    });
   } catch (error) {
     console.error(error);
     res.status(500).send("An error occurred while searching for movies.");

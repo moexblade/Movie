@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="/style/pages.css">
+
+<% if (movies && movies.Search && totalPages > 1) { %>
+
+<nav class="pagination">
+
+  <p>Pages: <%= totalPages %></p>
+
+  <% if (totalPages <= 7) { %>
+
+    <% for (let i = 1; i <= totalPages; i++) { %>
+      <a class="<%= i === currentPage ? 'active' : '' %>"
+        href="/search?word=<%= encodeURIComponent(searchWord) %>&page=<%= i %>"
+        <%= i === currentPage ? 'aria-current="page"' : '' %>>
+        <%= i %>
+      </a>
+    <% } %>
+
+  <% } else { %>
+
+    <!-- Previous -->
+    <% if (currentPage > 1) { %>
+      <a href="/search?word=<%= encodeURIComponent(searchWord) %>&page=<%= currentPage - 1 %>">
+        ←
+      </a>
+    <% } %>
+
+    <!-- First page -->
+    <a class="<%= currentPage === 1 ? 'active' : '' %>"
+      href="/search?word=<%= encodeURIComponent(searchWord) %>&page=1"
+      <%= currentPage === 1 ? 'aria-current="page"' : '' %>>1</a>
+
+    <!-- Left dots -->
+    <% if (currentPage > 4) { %>
+      <span>...</span>
+    <% } %>
+
+    <!-- Pages around current page -->
+    <% 
+      let start = Math.max(2, currentPage - 2);
+      let end = Math.min(totalPages - 1, currentPage + 2);
+    %>
+
+    <% for (let i = start; i <= end; i++) { %>
+      <a class="<%= i === currentPage ? 'active' : '' %>"
+        href="/search?word=<%= encodeURIComponent(searchWord) %>&page=<%= i %>"
+        <%= i === currentPage ? 'aria-current="page"' : '' %>>
+        <%= i %>
+      </a>
+    <% } %>
+
+    <!-- Right dots -->
+    <% if (currentPage < totalPages - 3) { %>
+      <span>...</span>
+    <% } %>
+
+    <!-- Last page -->
+    <a class="<%= currentPage === totalPages ? 'active' : '' %>"
+      href="/search?word=<%= encodeURIComponent(searchWord) %>&page=<%= totalPages %>"
+      <%= currentPage === totalPages ? 'aria-current="page"' : '' %>>
+      <%= totalPages %>
+    </a>
+
+    <!-- Next -->
+    <% if (currentPage < totalPages) { %>
+      <a href="/search?word=<%= encodeURIComponent(searchWord) %>&page=<%= currentPage + 1 %>">
+        →
+      </a>
+    <% } %>
+
+  <% } %>
+
+</nav>
+
+<% } %>

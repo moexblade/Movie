@@ -12,16 +12,16 @@
     </head>
     <body>
         <%- include("partials/header") %>
-        
+
         <div id="content" class="movie-info">
-            <% if (movies) { %>
+            <% if (movies && movies.Search) { %>
             <div class="container">
 
                 <% for (let i = 0; i < movies.Search.length; i++) { %>
                 <div class="movie-list">
 
                     <div class="movie-poster-list">
-                       <a href="/movies/<%= movies.Search[i].imdbID %>">
+                        <a href="/movies/<%= movies.Search[i].imdbID %>">
                             <img
                                 src="<%= movies.Search[i].Poster %>"
                                 alt="<%= movies.Search[i].Title %> poster">
@@ -47,9 +47,12 @@
                 </div>
                 <% } %>
             </div>
+            <% } else { %>
+            <div>No movie data available.</div>
             <% } %>
         </div>
 
+        <%- include("partials/pages") %>
         <%- include("partials/footer") %>
         <script src="/script/movie.js" defer></script>
     </body>
