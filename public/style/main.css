@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+    --font-brand: "Bebas Neue", sans-serif;
+    --font-body: "DM Sans", sans-serif;
+    --font-display: "Cormorant Garamond", Georgia, serif;
+}
+
+body {
+    font-family: var(--font-body);
+}
+
+.brand {
+    font-family: var(--font-brand);
+    font-size: 2.4rem;
+    letter-spacing: 0.04em;
+}
+
+#title,
+.movie-details h2,
+.movie-details h3 {
+    font-family: var(--font-display);
+}
+
+.movie-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.movie-details {
+    flex: 1;
+    padding: 1rem;
+    background-color: #EEEAD7;
+
+}
+
+.movie-poster {
+    max-width: 300px;
+    margin-right: 1rem;
+}
+
+#title{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+#year{
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+#genre, #director, #actors, #plot{
+    margin-bottom: 0.5rem;
+}
+
+#rating {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#rating-stars {
+    color: #757D6F;
+    font-size: 1.25rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}

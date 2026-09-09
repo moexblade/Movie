@@ -1,0 +1,94 @@
+/* Movie site footer */
+footer {
+	margin-top: auto;
+	position: relative;
+	overflow: hidden;
+	padding: 4rem clamp(1.25rem, 5vw, 5rem) 1.5rem;
+	color: #EEEAD7;
+	background: #2D0000;
+	border-top: 1px solid #757D6F;
+	font-family: inherit;
+}
+
+footer::before {
+	content: "";
+	position: absolute;
+	inset: 0 0 auto;
+	height: 2px;
+	background: #6D0808;
+}
+
+footer .footer-content,
+footer .footer-container,
+footer > div {
+	position: relative;
+	z-index: 1;
+	max-width: 1200px;
+	margin-inline: auto;
+}
+
+footer h2,
+footer h3 {
+	margin: 0 0 0.9rem;
+	color: #EEEAD7;
+	letter-spacing: -0.02em;
+}
+
+footer p {
+	max-width: 32rem;
+	margin: 0 0 1rem;
+	color: #757D6F;
+	line-height: 1.7;
+}
+
+footer a {
+	display: inline-block;
+	padding: 0.25rem 0;
+	color: #EEEAD7;
+	text-decoration: none;
+	transition: color 180ms ease, transform 180ms ease;
+}
+
+footer a:hover,
+footer a:focus-visible {
+	color: #EEEAD7;
+	transform: translateX(3px);
+}
+
+footer ul {
+	display: grid;
+	gap: 0.35rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+footer .footer-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-top: 3rem;
+	padding-top: 1.25rem;
+	color: #757D6F;
+	border-top: 1px solid #757D6F;
+	font-size: 0.85rem;
+}
+
+footer .footer-bottom p {
+	margin: 0;
+	color: inherit;
+	font-size: inherit;
+}
+
+@media (max-width: 600px) {
+	footer {
+		padding-top: 3rem;
+	}
+
+	footer .footer-bottom {
+		align-items: flex-start;
+		flex-direction: column;
+		margin-top: 2rem;
+	}
+}
