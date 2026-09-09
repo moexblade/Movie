@@ -1,89 +1,82 @@
 :root {
-	--color-dark: #2D0000;
-	--color-red: #6D0808;
-	--color-muted: #757D6F;
-	--color-light: #EEEAD7;
+  --dark: #2D0000;
+  --red: #6D0808;
+  --muted: #757D6F;
+  --light: #EEEAD7;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-body {
-	margin: 0;
-	background: var(--color-light);
-	color: var(--color-dark);
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	font-family: Georgia, "Times New Roman", serif;
-}
+
+
+/* Header */
 
 .site-header {
-	background: var(--color-dark);
-	border-bottom: 3px solid var(--color-red);
-	color: var(--color-light);
+  background: var(--dark);
+  border-bottom: 3px solid var(--red);
 }
 
 .site-nav {
-	align-items: center;
-	display: flex;
-	justify-content: space-between;
-	margin: 0 auto;
-	max-width: 1120px;
-	min-height: 78px;
-	padding: 16px 28px;
+  max-width: none;
+  padding: 20px 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+/* Logo */
+
 .brand {
-	color: var(--color-light);
-	font-size: 2rem;
-	font-weight: 700;
-	letter-spacing: 0.02em;
-	text-decoration: none;
+  color: var(--light);
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .brand span {
-	color: var(--color-red);
+  color: var(--red);
 }
 
+/* Navigation */
+
 .nav-links {
-	display: flex;
-	gap: 28px;
+  display: flex;
+  gap: 25px;
 }
 
 .nav-links a {
-	color: var(--color-muted);
-	font-family: Arial, sans-serif;
-	font-size: 0.8rem;
-	font-weight: 700;
-	letter-spacing: 0.12em;
-	padding: 10px 0;
-	text-decoration: none;
-	text-transform: uppercase;
-	transition: color 160ms ease;
+  color: var(--muted);
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-.nav-links a:hover,
-.nav-links a:focus-visible {
-	color: var(--color-light);
+.nav-links a:hover {
+  color: var(--light);
 }
 
-.brand:focus-visible,
-.nav-links a:focus-visible {
-	outline: 2px solid var(--color-red);
-	outline-offset: 5px;
-}
+/* Mobile */
 
-@media (max-width: 520px) {
-	.site-nav {
-		align-items: flex-start;
-		flex-direction: column;
-		gap: 12px;
-		padding: 18px 20px;
-	}
+@media (max-width: 600px) {
+  .site-nav {
+    padding: 15px;
+  }
 
-	.nav-links {
-		gap: 22px;
-	}
+  .brand {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+  }
 }

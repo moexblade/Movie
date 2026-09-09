@@ -3,35 +3,48 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style/index.css">
         <link rel="stylesheet" href="/style/header.css">
         <link rel="stylesheet" href="/style/footer.css">
-        <link rel="stylesheet" href="/style/main.css">
+        <link rel="stylesheet" href="/style/details.css">
+        <link rel="stylesheet" href="/style/list.css">
         <title>Movie</title>
     </head>
     <body>
         <%- include("partials/header") %>
-        <form id="search-form" action="/search" method="GET">
-            <label for="search-input">Search movies</label>
-            <input id="search-input" type="search" placeholder="Search by title" name="word" required>
-            <button type="submit">Search</button>
-        </form>
+        
         <div id="content" class="movie-info">
             <% if (movies) { %>
-                <div class="movie-poster">
-                    <img src="<%= movies.Poster %>" alt="<%= movies.Title %> poster">
+            <div class="container">
+
+                <% for (let i = 0; i < movies.Search.length; i++) { %>
+                <div class="movie-list">
+
+                    <div class="movie-poster-list">
+                        <img
+                            src="<%= movies.Search[i].Poster %>"
+                            alt="<%= movies.Search[i].Title %> poster">
+                    </div>
+
+                    <div class="movie-poster-list-details">
+
+                        <div class="movie-title">
+                            Title: <%= movies.Search[i].Title %>
+                        </div>
+
+                        <div class="movie-year">
+                            Year: <%= movies.Search[i].Year %>
+                        </div>
+
+                        <div class="movie-type">
+                            Type: <%= movies.Search[i].Type %>
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="movie-details">
-                    <div id="title">Title: <%= movies.Title %></div>
-                    <div id="rating" data-rating="<%= movies.imdbRating %>">Rating: <%= movies.imdbRating %></div>
-                    <div id="rating-stars" data-rating="<%= movies.imdbRating %>">Rating: <%= movies.imdbRating %></div>
-                    <div id="year">Year: <%= movies.Year %></div>
-                    <div id="genre">Genre: <%= movies.Genre %></div>
-                    <div id="director">Director: <%= movies.Director %></div>
-                    <div id="actors">Actors: <%= movies.Actors %></div>
-                    <div id="plot">Plot: <%= movies.Plot %></div>
-                </div>
-            <% } else { %>
-                <div>No movie data available.</div>
+                <% } %>
+            </div>
             <% } %>
         </div>
 

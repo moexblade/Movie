@@ -1,0 +1,50 @@
+.movie-list {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #eeead7;
+  border-radius: 10px;
+}
+
+.movie-poster-list img {
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.movie-poster-list-details {
+  padding: 10px;
+}
+
+.movie-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.movie-year,
+.movie-type {
+  margin-bottom: 8px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .movie-list {
+    grid-template-columns: 100px 1fr;
+    gap: 15px;
+  }
+
+  .movie-poster-list img {
+    width: 100px;
+    height: 150px;
+  }
+
+  .movie-title {
+    font-size: 1.4rem;
+  }
+}

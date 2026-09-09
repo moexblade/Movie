@@ -26,11 +26,11 @@ app.get("/search", async (req, res) => {
     const response = await axios.get(`${OMDB_URL}/`, {
       params: {
         apiKey: OMDB_KEY,
-        t: word,
+        s: word,
       },
     });
     const movies = response.data;
-    console.log(movies);
+    console.log(movies.Search[0].Title);
     res.render("index", { movies, word });
   } catch (error) {
     console.error(error);

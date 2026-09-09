@@ -2,8 +2,15 @@
 	<nav class="site-nav" aria-label="Main navigation">
 		<a class="brand" href="/">Movie<span>.</span></a>
 		<div class="nav-links">
+            <form id="search-form" action="/search" method="GET">
+            <label for="search-input">Search movies</label>
+            <input id="search-input" type="search" placeholder="Search by title"
+                name="word" required>
+            <button type="submit">Search</button>
 			<a href="/movies">Movies</a>
 			<a href="/about">About</a>
+			<a href="/about">About</a>
+        </form>
 		</div>
 	</nav>
 </header>
