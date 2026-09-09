@@ -14,45 +14,11 @@
         <%- include("partials/header") %>
 
         <div id="content" class="movie-info">
-            <% if (movies && movies.Search) { %>
-            <div class="container">
-
-                <% for (let i = 0; i < movies.Search.length; i++) { %>
-                <div class="movie-list">
-
-                    <div class="movie-poster-list">
-                        <a href="/movies/<%= movies.Search[i].imdbID %>">
-                            <img
-                                src="<%= movies.Search[i].Poster %>"
-                                alt="<%= movies.Search[i].Title %> poster">
-                        </a>
-                    </div>
-
-                    <div class="movie-poster-list-details">
-
-                        <div class="movie-title">
-                            Title: <%= movies.Search[i].Title %>
-                        </div>
-
-                        <div class="movie-year">
-                            Year: <%= movies.Search[i].Year %>
-                        </div>
-
-                        <div class="movie-type">
-                            Type: <%= movies.Search[i].Type %>
-                        </div>
-
-                    </div>
-
-                </div>
-                <% } %>
-            </div>
-            <% } else { %>
-            <div>No movie data available.</div>
-            <% } %>
+            <%- include("partials/search", { movies: locals.movies }) %>
         </div>
 
         <%- include("partials/pages") %>
+
         <%- include("partials/footer") %>
         <script src="/script/movie.js" defer></script>
     </body>
