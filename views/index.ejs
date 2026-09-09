@@ -21,9 +21,11 @@
                 <div class="movie-list">
 
                     <div class="movie-poster-list">
-                        <img
-                            src="<%= movies.Search[i].Poster %>"
-                            alt="<%= movies.Search[i].Title %> poster">
+                       <a href="/movies/<%= movies.Search[i].imdbID %>">
+                            <img
+                                src="<%= movies.Search[i].Poster %>"
+                                alt="<%= movies.Search[i].Title %> poster">
+                        </a>
                     </div>
 
                     <div class="movie-poster-list-details">

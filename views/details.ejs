@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style/index.css">
+        <link rel="stylesheet" href="/style/header.css">
+        <link rel="stylesheet" href="/style/footer.css">
+        <link rel="stylesheet" href="/style/details.css">
+        <link rel="stylesheet" href="/style/list.css">
+        <title>Movie</title>
+    </head>
+    <body>
+        <%- include("partials/header") %>
+        <div id="content" class="movie-info">
+            <% if (movieDetails) { %>
+                <div class="movie-poster">
+                    <img src="<%= movieDetails.Poster %>" alt="movieDetails.Title poster">
+                </div>
+                <div class="movie-details">
+                    
+                    <button id="go-back-btn" onclick="history.back()">← Go Back</button>
+                    <div id="title">Title: <%= movieDetails.Title %></div>
+                    <div id="rating" data-rating="<%= movieDetails.imdbRating %>">Rating: <%= movieDetails.imdbRating %></div>
+                    <div id="rating-stars" data-rating="<%= movieDetails.imdbRating %>">Rating: <%= movieDetails.imdbRating %></div>
+                    <div id="year">Year: <%= movieDetails.Year %></div>
+                    <div id="genre">Genre: <%= movieDetails.Genre %></div>
+                    <div id="director">Director: <%= movieDetails.Director %></div>
+                    <div id="actors">Actors: <%= movieDetails.Actors %></div>
+                    <div id="plot">Plot: <%= movieDetails.Plot %></div>
+                </div>
+            <% } else { %>
+                <div>No movie data available.</div>
+            <% } %>
+        </div>
+
+        <%- include("partials/footer") %>
+        <script src="/script/movie.js" defer></script>
+        <script src="/script/go-back.js" defer></script>
+    </body>
+</html>
