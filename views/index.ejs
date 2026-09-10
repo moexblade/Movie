@@ -17,7 +17,7 @@
             <%- include("partials/search", { movies: locals.movies }) %>
         </div>
 
-        <%- include("partials/pages") %>
+        <%- include("partials/pages", { movies: locals.movies }) %>
 
         <%- include("partials/footer") %>
         <script src="/script/movie.js" defer></script>
