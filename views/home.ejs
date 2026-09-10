@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style/index.css">
+        <link rel="stylesheet" href="/style/header.css">
+        <link rel="stylesheet" href="/style/footer.css">
+        <link rel="stylesheet" href="/style/details.css">
+        <link rel="stylesheet" href="/style/list.css">
+        <link rel="stylesheet" href="/style/home.css">
+        <title>Movie</title>
+    </head>
+
+    <body>
+        <%- include("partials/header") %>
+
+        <div class="container">
+            <h1>FIND YOUR NEXT MOVIE</h1>
+            <h2>Search thousands of movies and discover something to watch</h2>
+            <form id="search-form" action="/search" method="GET">
+                <input id="search-input" type="search"
+                    placeholder="Search by title"
+                    name="word" required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <% if (movies && movies.length) { %>
+                <div class="movie-grid">
+                    <% movies.forEach((movie) => { %>
+                        <div class="movie-card">
+                            <a href="/movies/<%= movie.imdbID %>">
+                                <img src="<%= movie.Poster %>" alt="<%= movie.Title %> poster">
+                            </a>
+                            <div class="movie-card-info">
+                                <h3><%= movie.Title %></h3>
+                                <p><%= movie.Year %></p>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            <% } else { %>
+                <p>No featured movies available right now.</p>
+            <% } %>
+        </div>
+        <%- include("partials/footer") %>
+    </body>
+</html>
