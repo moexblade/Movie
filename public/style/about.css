@@ -1,0 +1,78 @@
+/* From Uiverse.io by 0xnihilism */ 
+.card {
+  width: 300px;
+  padding: 20px;
+  background: #fff;
+  border: 6px solid #000;
+  box-shadow: 12px 12px 0 #000;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 17px 17px 0 #000;
+}
+
+.card__title {
+  font-size: 32px;
+  font-weight: 900;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  height: 3px;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+.card:hover .card__title::after {
+  transform: translateX(0);
+}
+
+.card__content {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+@keyframes glitch {
+  0% {
+    transform: translate(2px, 2px);
+  }
+  25% {
+    transform: translate(-2px, -2px);
+  }
+  50% {
+    transform: translate(-2px, 2px);
+  }
+  75% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(2px, 2px);
+  }
+}
+
+.glitch {
+  animation: glitch 0.3s infinite;
+}

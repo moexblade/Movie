@@ -40,6 +40,12 @@ body {
   margin-right: 1rem;
 }
 
+.movie-poster img {
+  max-width: 100%; /* Prevents the image from breaking out of the box */
+  max-height: 100%; /* Keeps the image contained vertically */
+  object-fit: contain;
+}
+
 #title {
   font-size: 2rem;
   font-weight: bold;
