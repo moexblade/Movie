@@ -21,3 +21,28 @@ textarea {
   font: inherit;
 }
 
+input[type="submit"],
+button {
+  padding: 5px 10px;
+  margin-top: 10px;
+  border: 3px solid var(--dark);
+  box-shadow: 3px 3px 0 var(--dark);
+  font-weight: 750;
+  background: var(--red);
+  color: var(--light);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  translate: 1.5px 1.5px;
+  box-shadow: 1.5px 1.5px 0 var(--light);
+  background: var(--dark);
+}
+
+input[type="submit"]:active,
+button:active {
+  translate: 3px 3px;
+  box-shadow: 0 0 0 var(--light);
+}

@@ -76,17 +76,7 @@ hr {
   height: 3rem;
 }
 
-.container button {
-  width: 9rem;
-  height: 3rem;
+.home-search #search-input {
+  border-width: 3px;
 }
 
-.explore-btn {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  background-color: var(--red);
-  color: var(--light);
-  cursor: pointer;
-}
