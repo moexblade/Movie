@@ -6,6 +6,7 @@ import homeRouter from "./routes/home.js";
 import searchRouter from "./routes/search.js";
 import detailsRouter from "./routes/details.js";
 import aboutRouter from "./routes/about.js";
+import contactRouter from "./routes/contact.js";
 
 const app = express();
 const port = 8080;
@@ -22,6 +23,7 @@ app.use("/", homeRouter);
 app.use("/", searchRouter);
 app.use("/", detailsRouter);
 app.use("/", aboutRouter);
+app.use("/", contactRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
