@@ -17,6 +17,8 @@ router.get("/", async (req, res) => {
       "Interstellar",
       "The Matrix",
       "Goodfellas",
+      "The Good, the Bad and the Ugly",
+      "Fantastic Mr. Fox"
     ];
 
     const movies = await Promise.all(
