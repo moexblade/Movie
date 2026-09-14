@@ -45,11 +45,59 @@
   margin-bottom: 0.5rem;
 }
 
+#rated {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+#rated span {
+  display: inline-block;
+  padding: 0.25rem 0.55rem;
+  border: 2px solid var(--dark);
+  border-radius: 4px;
+  background: var(--red);
+  color: var(--light);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
 #genre,
+#runtime,
 #director,
 #actors,
-#plot {
+#plot,
+#box-office {
   margin-bottom: 0.5rem;
+}
+
+#language {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.language-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.language-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.45rem;
+  border: 1px solid var(--muted);
+  border-radius: 4px;
+  background: var(--light);
+}
+
+.language-item .fi {
+  font-size: 1rem;
 }
 
 #rating {
@@ -64,4 +112,69 @@
 
 #go-back-btn{
   margin-bottom: 15px;
+}
+
+.ratings-list {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 3px solid var(--dark);
+}
+
+.ratings-list h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+}
+
+.rating-source {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--muted);
+}
+
+.rating-source-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.rating-logo {
+  display: inline-grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 2px solid #000;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.rating-logo-imdb {
+  background: #f5c518;
+  color: #000;
+}
+
+.rating-logo-rt {
+  background: #e31837;
+}
+
+.rating-logo-metacritic {
+  background: #66cc33;
+  color: #000;
+}
+
+.rating-logo-default {
+  display: inline-grid;
+  place-items: center;
+  background: var(--dark);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.rating-source strong {
+  color: var(--red);
 }

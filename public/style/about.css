@@ -1,6 +1,60 @@
-/* From Uiverse.io by 0xnihilism */ 
+body {
+  line-height: 1.5;
+}
+
+.container {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.container > h1 {
+  margin: 0 0 0.5rem;
+  color: var(--red);
+  font-size: 3rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.container > h2 {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+}
+
+.container > h3 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.container > p {
+  max-width: 650px;
+  margin: 0.4rem auto;
+  font-size: 1.05rem;
+}
+
+.container form {
+  margin-top: 1.25rem;
+}
+
+.explore-btn {
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+}
+
+.container-row {
+  width: min(100%, 980px);
+  margin: 1rem auto 0;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* From Uiverse.io by 0xnihilism */
 .card {
-  width: 300px;
+  width: min(300px, 100%);
+  text-align: left;
   padding: 20px;
   background: var(--light);
   border: 6px solid var(--dark);
@@ -14,6 +68,7 @@
 }
 
 .card__title {
+  font-family: var(--font-display);
   font-size: 32px;
   font-weight: 900;
   color: var(--dark);
@@ -45,6 +100,24 @@
   line-height: 1.4;
   color: var(--red);
   margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .container > h1 {
+    font-size: 2.5rem;
+  }
+
+  .container > h2 {
+    font-size: 1.5rem;
+  }
+
+  .container > h3 {
+    font-size: 1rem;
+  }
 }
 
 

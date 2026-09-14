@@ -8,11 +8,26 @@
   border-radius: 10px;
 }
 
-.movie-poster-list img {
+.search-poster-card {
   width: 150px;
+  box-sizing: border-box;
+  padding: 8px;
+  background: var(--light);
+  border: 4px solid var(--dark);
+  box-shadow: 8px 8px 0 var(--dark);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.search-poster-card:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 12px 12px 0 var(--dark);
+}
+
+.search-poster-card img {
+  display: block;
+  width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 8px;
 }
 
 .movie-poster-list-details {
@@ -39,8 +54,12 @@
     gap: 15px;
   }
 
-  .movie-poster-list img {
+  .search-poster-card {
     width: 100px;
+    padding: 6px;
+  }
+
+  .search-poster-card img {
     height: 150px;
   }
 

@@ -18,7 +18,8 @@
         <div class="container">
             <h1>FIND YOUR NEXT MOVIE</h1>
             <h2>Search thousands of movies and discover something to watch</h2>
-            <form id="search-form" class="home-search" action="/search" method="GET">
+            <form id="search-form" class="home-search" action="/search"
+                method="GET">
                 <input id="search-input" type="search"
                     placeholder="Search by title"
                     name="word" required>
@@ -30,21 +31,28 @@
 
         <div class="row">
             <% if (movies && movies.length) { %>
-                <div class="movie-grid">
-                    <% movies.forEach((movie) => { %>
-                        <div class="movie-card">
-                            <a href="/movies/<%= movie.imdbID %>">
-                                <img src="<%= movie.Poster %>" alt="<%= movie.Title %> poster">
-                            </a>
-                            <div class="movie-card-info">
-                                <h3><%= movie.Title %></h3>
-                                <p><%= movie.Year %></p>
-                            </div>
+            <div class="movie-grid">
+                <% movies.forEach((movie) => { %>
+                <div class="card">
+                    <a href="/movies/<%= movie.imdbID %>">
+                        <img src="<%= movie.Poster %>"
+                            alt="<%= movie.Title %> poster">
+                    </a>
+                    <div class="movie-card-info">
+                        <h3><%= movie.Title %></h3>
+
+                        <div class="movie-meta">
+                            <span class="rating">★ <%= movie.imdbRating
+                                %></span>
+                                <span class="Runtime"><%= movie.Runtime %></span>
+                            <span class="year"><%= movie.Year %></span>
                         </div>
-                    <% }); %>
+                    </div>
                 </div>
+                <% }); %>
+            </div>
             <% } else { %>
-                <p>No featured movies available right now.</p>
+            <p>No featured movies available right now.</p>
             <% } %>
         </div>
         <%- include("partials/footer") %>

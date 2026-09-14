@@ -38,37 +38,36 @@ hr {
 
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
   gap: 1.5rem;
 }
 
-.movie-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(45, 0, 0, 0.1);
-}
-
-.movie-card img {
-  display: block;
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-}
-
 .movie-card-info {
-  padding: 1rem;
+  padding: 0;
 }
 
 .movie-card-info h3 {
-  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
   color: var(--dark);
-  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin: 15px 0;
+  display: block;
+  position: relative;
+  overflow: hidden;
 }
 
-.movie-card-info p {
-  margin: 0;
-  color: var(--muted);
+.movie-card-info h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  height: 3px;
+  background-color: var(--red);
+  transform: translateX(-100%);
+  transition: transform 0.3s;
 }
 
 .container input {
@@ -80,3 +79,19 @@ hr {
   border-width: 3px;
 }
 
+
+.movie-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.rating {
+    font-weight: bold;
+  justify-self: start;
+}
+
+.year {
+  opacity: 0.7;
+}

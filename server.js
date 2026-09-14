@@ -14,6 +14,7 @@ const port = 8080;
 //Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use("/vendor/flag-icons", express.static("node_modules/flag-icons"));
 
 // Set EJS as the view engine
 app.set("view engine", "ejs");

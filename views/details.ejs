@@ -8,13 +8,14 @@
         <link rel="stylesheet" href="/style/footer.css">
         <link rel="stylesheet" href="/style/details.css">
         <link rel="stylesheet" href="/style/list.css">
+        <link rel="stylesheet" href="/vendor/flag-icons/css/flag-icons.min.css">
         <title>Movie</title>
     </head>
     <body>
         <%- include("partials/header") %>
         <div id="content" class="movie-info">
             <% if (movieDetails) { %>
-                <div class="movie-poster">
+                <div class="poster-card">
                     <img src="<%= movieDetails.Poster %>" alt="movieDetails.Title poster">
                 </div>
                 <div class="movie-details">
@@ -25,9 +26,51 @@
                     <div id="rating-stars" data-rating="<%= movieDetails.imdbRating %>">Rating: <%= movieDetails.imdbRating %></div>
                     <div id="year">Year: <%= movieDetails.Year %></div>
                     <div id="genre">Genre: <%= movieDetails.Genre %></div>
+                    <% if (movieDetails.Rated && movieDetails.Rated !== "N/A") { %>
+                        <div id="rated">Rated <span><%= movieDetails.Rated %></span></div>
+                    <% } %>
+                    <div id="runtime">Runtime: <%= movieDetails.Runtime %></div>
+                    <% const languageFlags = { English: "us", Spanish: "es", French: "fr", German: "de", Italian: "it", Japanese: "jp", Korean: "kr", Chinese: "cn", Hindi: "in", Russian: "ru", Portuguese: "pt", Arabic: "sa", Turkish: "tr", Dutch: "nl", Swedish: "se", Danish: "dk", Norwegian: "no", Finnish: "fi", Polish: "pl", Greek: "gr", Hebrew: "il", Thai: "th" }; %>
+                    <div id="language">
+                        <span>Language:</span>
+                        <span class="language-list">
+                            <% (movieDetails.Language || "N/A").split(",").forEach((language) => { %>
+                                <% const languageName = language.trim(); %>
+                                <span class="language-item">
+                                    <% if (languageFlags[languageName]) { %>
+                                        <span class="fi fi-<%= languageFlags[languageName] %>" aria-hidden="true"></span>
+                                    <% } %>
+                                    <%= languageName %>
+                                </span>
+                            <% }); %>
+                        </span>
+                    </div>
                     <div id="director">Director: <%= movieDetails.Director %></div>
                     <div id="actors">Actors: <%= movieDetails.Actors %></div>
                     <div id="plot">Plot: <%= movieDetails.Plot %></div>
+                    <div id="box-office">Box Office: <%= movieDetails.BoxOffice %></div>
+                    <% if (Array.isArray(movieDetails.Ratings) && movieDetails.Ratings.length) { %>
+                        <div class="ratings-list">
+                            <h2>Ratings</h2>
+                            <% movieDetails.Ratings.forEach((rating) => { %>
+                                <div class="rating-source">
+                                    <span class="rating-source-name">
+                                        <% if (rating.Source === 'Internet Movie Database') { %>
+                                            <span class="rating-logo rating-logo-imdb" aria-label="IMDb logo">IMDb</span>
+                                        <% } else if (rating.Source === 'Rotten Tomatoes') { %>
+                                            <span class="rating-logo rating-logo-rt" aria-label="Rotten Tomatoes logo">RT</span>
+                                        <% } else if (rating.Source === 'Metacritic') { %>
+                                            <span class="rating-logo rating-logo-metacritic" aria-label="Metacritic logo">MC</span>
+                                        <% } else { %>
+                                            <span class="rating-logo rating-logo-default">★</span>
+                                        <% } %>
+                                        <%= rating.Source %>
+                                    </span>
+                                    <strong><%= rating.Value %></strong>
+                                </div>
+                            <% }); %>
+                        </div>
+                    <% } %>
                 </div>
             <% } else { %>
                 <div>No movie data available.</div>
