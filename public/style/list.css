@@ -5,7 +5,8 @@
   padding: 15px;
   margin-bottom: 20px;
   background-color: #eeead7;
-  border-radius: 10px;
+  border: 2px solid black;
+
 }
 
 .search-poster-card {
@@ -32,6 +33,7 @@
 
 .movie-poster-list-details {
   padding: 10px;
+  border: 2px solid var(--dark);
 }
 
 .movie-title {
@@ -41,6 +43,8 @@
   margin-bottom: 10px;
 }
 
+.movie-imdbRating,
+.movie-runtime,
 .movie-year,
 .movie-type {
   margin-bottom: 8px;

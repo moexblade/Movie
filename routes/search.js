@@ -16,6 +16,26 @@ router.get("/search", async (req, res) => {
       },
     });
     const movies = response.data;
+
+    if (Array.isArray(movies.Search)) {
+      movies.Search = await Promise.all(
+        movies.Search.map(async (movie) => {
+          const detailsResponse = await axios.get(`${OMDB_URL}/`, {
+            params: {
+              apiKey: OMDB_KEY,
+              i: movie.imdbID,
+            },
+          });
+
+          return {
+            ...movie,
+            Runtime: detailsResponse.data.Runtime,
+            imdbRating: detailsResponse.data.imdbRating,
+          };
+        })
+      );
+    }
+
     const totalPages = Math.ceil(Number(movies.totalResults || 0) / 10);
 
     res.render("index", {

@@ -20,19 +20,24 @@
 .movie-details {
   flex: 1;
   padding: 1rem;
-  background-color: #eeead7;
+  background-color: var(--light);
+  border: 2px solid var(--dark);
 }
 
 .movie-poster {
   max-width: 300px;
   margin-right: 1rem;
+  
 }
 
 .movie-poster img {
   max-width: 100%; /* Prevents the image from breaking out of the box */
   max-height: 100%; /* Keeps the image contained vertically */
   object-fit: contain;
+  
+  
 }
+
 
 #title {
   font-size: 2rem;
