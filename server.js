@@ -9,7 +9,7 @@ import aboutRouter from "./routes/about.js";
 import contactRouter from "./routes/contact.js";
 
 const app = express();
-const port = 8080;
+const port = Number(process.env.PORT) || 8080;
 app.locals.siteUrl = (process.env.SITE_URL || `http://localhost:${port}`).replace(/\/$/, "");
 
 //Middleware

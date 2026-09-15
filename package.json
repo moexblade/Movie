@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "build": "node --check server.js && node --check routes/home.js && node --check routes/search.js && node --check routes/details.js && node --check routes/about.js && node --check routes/contact.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },

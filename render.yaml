@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: movie
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: OMDB_KEY
+        sync: false
+      - key: SITE_URL
+        sync: false
