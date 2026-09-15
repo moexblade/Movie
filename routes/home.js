@@ -21,6 +21,15 @@ router.get("/", async (req, res) => {
       "Fantastic Mr. Fox"
     ];
 
+    // Display random movies in the home page
+    for (let index = famousMovies.length - 1; index > 0; index--) {
+      const randomIndex = Math.floor(Math.random() * (index + 1));
+      [famousMovies[index], famousMovies[randomIndex]] = [
+        famousMovies[randomIndex],
+        famousMovies[index],
+      ];
+    }
+
     const movies = await Promise.all(
       famousMovies.map((title) =>
         axios.get(`${OMDB_URL}/`, {

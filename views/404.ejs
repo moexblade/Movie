@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/style/index.css">
+        <link rel="stylesheet" href="/style/header.css">
+        <link rel="stylesheet" href="/style/footer.css">
+        <link rel="stylesheet" href="/style/404.css">
+        <title>Page Not Found | Movie</title>
+    </head>
+
+    <body>
+        <%- include("partials/header") %>
+
+        <main class="error-page">
+            <p class="error-code">404</p>
+            <h1>THIS SCENE IS MISSING</h1>
+            <p class="error-message">
+                We couldn't find <strong><%= requestedPath %></strong>.
+            </p>
+            <a class="error-home-link" href="/">Back to home</a>
+        </main>
+
+        <%- include("partials/footer") %>
+    </body>
+</html>

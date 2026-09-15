@@ -26,6 +26,12 @@ app.use("/", detailsRouter);
 app.use("/", aboutRouter);
 app.use("/", contactRouter);
 
+app.use((req, res) => {
+  res.status(404).render("404", {
+    requestedPath: req.originalUrl,
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

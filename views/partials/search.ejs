@@ -40,5 +40,10 @@
                 <% } %>
             </div>
             <% } else { %>
-            <div>No movie data available.</div>
+            <div class="search-empty-state" role="status">
+                <p class="search-empty-code">NO RESULTS</p>
+                <h2>That search came up empty</h2>
+                <p>Try another title, spelling, or a different keyword.</p>
+                <a href="/">Back to home</a>
+            </div>
             <% } %>
