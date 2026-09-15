@@ -9,7 +9,11 @@
         <link rel="stylesheet" href="/style/details.css">
         <link rel="stylesheet" href="/style/list.css">
         <link rel="stylesheet" href="/style/home.css">
-        <title>Movie</title>
+        <%- include("partials/seo", {
+            title: "Movie. | Discover Your Next Favorite Film",
+            description: "Discover popular movies, explore ratings and details, and find your next favorite film.",
+            canonicalPath: "/"
+        }) %>
     </head>
 
     <body>

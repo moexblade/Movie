@@ -1,0 +1,5 @@
+<% if (movieSchema) { %>
+<script type="application/ld+json">
+<%- JSON.stringify(movieSchema).replace(/</g, "\\u003c") %>
+</script>
+<% } %>

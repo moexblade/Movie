@@ -10,6 +10,7 @@ import contactRouter from "./routes/contact.js";
 
 const app = express();
 const port = 8080;
+app.locals.siteUrl = (process.env.SITE_URL || `http://localhost:${port}`).replace(/\/$/, "");
 
 //Middleware
 app.use(bodyParser.urlencoded({ extended: true }));

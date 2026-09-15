@@ -8,7 +8,12 @@
         <link rel="stylesheet" href="/style/footer.css">
         <link rel="stylesheet" href="/style/details.css">
         <link rel="stylesheet" href="/style/list.css">
-        <title>Movie</title>
+        <%- include("partials/seo", {
+            title: searchWord ? `Search results for ${searchWord} | Movie.` : "Search Movies | Movie.",
+            description: searchWord ? `Browse movie search results for ${searchWord}.` : "Search movies by title and explore ratings, genres, cast, and details.",
+            canonicalPath: "/search",
+            robots: "noindex,follow"
+        }) %>
     </head>
     <body>
         <%- include("partials/header") %>

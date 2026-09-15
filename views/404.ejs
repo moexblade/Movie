@@ -7,7 +7,12 @@
         <link rel="stylesheet" href="/style/header.css">
         <link rel="stylesheet" href="/style/footer.css">
         <link rel="stylesheet" href="/style/404.css">
-        <title>Page Not Found | Movie</title>
+        <%- include("partials/seo", {
+            title: "Page Not Found | Movie.",
+            description: "The movie page you requested could not be found.",
+            canonicalPath: "/404",
+            robots: "noindex,follow"
+        }) %>
     </head>
 
     <body>

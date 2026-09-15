@@ -7,7 +7,11 @@
         <link rel="stylesheet" href="/style/footer.css">
         <link rel="stylesheet" href="/style/contact.css">
         <link rel="stylesheet" href="/style/index.css">
-        <title>Contact</title>
+        <%- include("partials/seo", {
+            title: "Contact Movie. | Movie Discovery",
+            description: "Get in touch with Movie. about questions, suggestions, and your movie discovery experience.",
+            canonicalPath: "/contact"
+        }) %>
     </head>
     <body>
         <%- include("partials/header.ejs") %>

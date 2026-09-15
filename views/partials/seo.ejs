@@ -1,0 +1,11 @@
+<title><%= title %></title>
+<meta name="description" content="<%= description %>">
+<meta name="robots" content="<%= locals.robots || 'index,follow' %>">
+<link rel="canonical" href="<%= (locals.siteUrl || 'http://localhost:8080') + canonicalPath %>">
+<meta property="og:type" content="<%= locals.ogType || 'website' %>">
+<meta property="og:title" content="<%= title %>">
+<meta property="og:description" content="<%= description %>">
+<meta property="og:url" content="<%= (locals.siteUrl || 'http://localhost:8080') + canonicalPath %>">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<%= title %>">
+<meta name="twitter:description" content="<%= description %>">

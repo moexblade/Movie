@@ -9,7 +9,13 @@
         <link rel="stylesheet" href="/style/details.css">
         <link rel="stylesheet" href="/style/list.css">
         <link rel="stylesheet" href="/vendor/flag-icons/css/flag-icons.min.css">
-        <title>Movie</title>
+        <%- include("partials/seo", {
+            title: movieDetails ? `${movieDetails.Title} | Movie.` : "Movie Details | Movie.",
+            description: movieDetails && movieDetails.Plot ? movieDetails.Plot : "Explore movie ratings, genres, cast, runtime, and more.",
+            canonicalPath: movieDetails && movieDetails.imdbID ? `/movies/${movieDetails.imdbID}` : "/movies",
+            ogType: "article"
+        }) %>
+        <%- include("partials/movie-schema", { movieSchema }) %>
     </head>
     <body>
         <%- include("partials/header") %>
